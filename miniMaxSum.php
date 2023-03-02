@@ -8,11 +8,15 @@
 
 function miniMaxSum($arr) {
     // Write your code here
-	$a = $arr[1] + $arr[2] + $arr[3] + $arr[4];
-	$b = $arr[0] + $arr[2] + $arr[3] + $arr[4];
-	$c = $arr[0] + $arr[1] + $arr[3] + $arr[4];
-	$d = $arr[0] + $arr[1] + $arr[2] + $arr[4];
-	$e = $arr[0] + $arr[1] + $arr[2] + $arr[3];
+	$total = 0;
+	foreach ($arr as $item)
+		$total += $item;
+	$a = $total - $arr[0];
+	$b = $total - $arr[1];
+	$c = $total - $arr[2];
+	$d = $total - $arr[3];
+	$e = $total - $arr[4];
+
 	$minSum = min($a,$b,$c,$d,$e);
 	$maxSum = max($a,$b,$c,$d,$e);
 	echo($minSum . " " . $maxSum);
